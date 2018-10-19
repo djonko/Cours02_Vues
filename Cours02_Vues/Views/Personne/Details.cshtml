@@ -1,0 +1,49 @@
+﻿@model Cours02_Vues.Models.Personne
+
+<div>
+    <h4>Personne</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPersonne)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPersonne)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pays)
+        </dt>
+        <dd>
+            @switch (Model.Pays)
+            {
+                case 1:<span class="flag-icon flag-icon-fr"></span>break;
+                case 2: <span class="flag-icon flag-icon-bz"></span>break;
+                case 3: <span class="flag-icon flag-icon-ca"></span>break;
+                default: <span class="flag-icon flag-icon-us"></span>break;
+            }
+
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPersonne }) |
+    <a asp-action="Index">Back to List</a>
+</div>
